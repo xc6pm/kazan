@@ -1,1 +1,19 @@
-{}
+{
+  "brand_name": "کازان",
+  "sign_in": "ورود",
+  "sign_up": "ثبت نام",
+  "email": "ایمیل",
+  "email_placeholder": "your@email.com",
+  "password": "رمز عبور",
+  "confirm_password": "تکرار رمز عبور",
+  "error": "خطا",
+  "dont_have_account?": "حساب کاربری ندارید؟",
+  "already_have_account?": "قبلاً حساب کاربری دارید؟",
+  "invalid_email": "آدرس ایمیل نامعتبر است",
+  "password_min_length": "رمز عبور باید حداقل ۶ کاراکتر باشد",
+  "passwords_dont_match": "رمزهای عبور مطابقت ندارند",
+  "unexpected_error": "یک خطای غیرمنتظره رخ داد",
+  "signup_success": "ثبت نام با موفقیت انجام شد!",
+  "redirecting_to_login": "در حال انتقال به صفحه ورود...",
+  "email_not_confirmed": "ایمیل تایید نشده، لطفا صندوق ورودی ایمیلتان را بررسی کنید."
+}

@@ -1,5 +1,11 @@
+<script setup lang="ts">
+import { NuxtLayout } from "#components"
+</script>
+
 <template>
   <UApp>
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </UApp>
 </template>
