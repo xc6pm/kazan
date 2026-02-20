@@ -5,6 +5,8 @@ const { $t } = useI18n()
 
 const route = useRoute()
 
+const user = useSupabaseUser()
+
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: "Docs",
@@ -40,16 +42,14 @@ const items = computed<NavigationMenuItem[]>(() => [
     <template #right>
       <UColorModeButton />
 
-      <UTooltip text="Open on GitHub" :kbds="['meta', 'G']">
-        <UButton
-          color="neutral"
-          variant="ghost"
-          to="https://github.com/nuxt/ui"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-        />
-      </UTooltip>
+      <UButton
+        color="neutral"
+        variant="ghost"
+        :to="user?.email ? '/dashboard' : '/signin'"
+        target="_blank"
+        aria-label="Sign In"
+        :label="user?.email ?? $t('sign_in')?.toString()"
+      />
     </template>
   </UHeader>
 
