@@ -2,6 +2,7 @@
   "brand_name": "کازان",
   "sign_in": "ورود به حساب کاربری",
   "sign_up": "ثبت نام",
+  "sign_out": "خروج از حساب کاربری",
   "email": "ایمیل",
   "email_placeholder": "your@email.com",
   "password": "رمز عبور",
@@ -15,5 +16,6 @@
   "unexpected_error": "یک خطای غیرمنتظره رخ داد",
   "signup_success": "ثبت نام با موفقیت انجام شد!",
   "redirecting_to_login": "در حال انتقال به صفحه ورود...",
-  "email_not_confirmed": "ایمیل تایید نشده، لطفا صندوق ورودی ایمیلتان را بررسی کنید."
+  "email_not_confirmed": "ایمیل تایید نشده، لطفا صندوق ورودی ایمیلتان را بررسی کنید.",
+  "signout_unsuccessful": "خروج از حساب کاربری ناموفق بود!"
 }

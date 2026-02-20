@@ -46,7 +46,6 @@ const items = computed<NavigationMenuItem[]>(() => [
         color="neutral"
         variant="ghost"
         :to="user?.email ? '/dashboard' : '/signin'"
-        target="_blank"
         aria-label="Sign In"
         :label="user?.email ?? $t('sign_in')?.toString()"
       />
