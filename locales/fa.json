@@ -36,5 +36,13 @@
   "display_name_max_length": "نام نمایشی باید حداکثر ۵۰ کاراکتر باشد",
   "display_name_updated": "نام نمایشی با موفقیت به‌روزرسانی شد!",
   "save": "ذخیره",
-  "unavailable": "ناموجود"
+  "unavailable": "ناموجود",
+  "book_not_found": "کتاب یافت نشد",
+  "authors": "نویسنده",
+  "translators": "مترجم",
+  "publisher": "انتشارات",
+  "language": "زبان",
+  "toman": "تومان",
+  "buy": "خرید",
+  "specifications": "مشخصات"
 }

@@ -9,7 +9,7 @@ const props = defineProps<{
   }
 }>()
 
-const {$t} = useI18n()
+const { $t } = useI18n()
 
 const supabase = useSupabaseClient()
 
@@ -28,25 +28,29 @@ const formattedPrice = computed(() =>
 </script>
 
 <template>
-  <UCard
-    class="transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer"
-  >
-    <template #header>
-      <img
-        :src="imageUrl"
-        :alt="props.book.title"
-        class="w-full h-56 object-cover rounded-md"
-      />
-    </template>
+  <ULink :to="`/book/${props.book.id}`">
+    <UCard
+      class="transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer"
+    >
+      <template #header>
+        <img
+          :src="imageUrl"
+          :alt="props.book.title"
+          class="w-full h-56 object-cover rounded-md"
+        />
+      </template>
 
-    <div class="flex flex-col gap-1">
-      <p class="font-semibold text-sm truncate" :title="props.book.title">
-        {{ props.book.title }}
-      </p>
-      <p v-if="available" class="text-xs text-muted text-left">
-        {{ formattedPrice }} تومان
-      </p>
-      <p v-else class="text-xs text-muted text-left">{{ $t("unavailable") }}</p>
-    </div>
-  </UCard>
+      <div class="flex flex-col gap-1">
+        <p class="font-semibold text-sm truncate" :title="props.book.title">
+          {{ props.book.title }}
+        </p>
+        <p v-if="available" class="text-xs text-muted text-left">
+          {{ formattedPrice }} تومان
+        </p>
+        <p v-else class="text-xs text-muted text-left">
+          {{ $t("unavailable") }}
+        </p>
+      </div>
+    </UCard>
+  </ULink>
 </template>
