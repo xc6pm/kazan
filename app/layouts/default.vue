@@ -6,6 +6,22 @@ const { $t } = useI18n()
 const route = useRoute()
 
 const user = useSupabaseUser()
+const supabase = useSupabaseClient()
+const displayNameFromServer = ref<string | null>(null)
+if (user.value) {
+  const { data } = await supabase
+    .from("users")
+    .select("display_name")
+    .eq("auth_user_id", user.value.sub)
+
+  displayNameFromServer.value = data?.[0]?.display_name ?? null
+}
+const displayName = computed(
+  () =>
+    displayNameFromServer.value ??
+    user.value?.email ??
+    $t("sign_in")?.toString(),
+)
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
@@ -47,7 +63,7 @@ const items = computed<NavigationMenuItem[]>(() => [
         variant="ghost"
         :to="user?.email ? '/dashboard' : '/signin'"
         aria-label="Sign In"
-        :label="user?.email ?? $t('sign_in')?.toString()"
+        :label="displayName"
       />
     </template>
   </UHeader>
