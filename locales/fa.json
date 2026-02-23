@@ -44,5 +44,9 @@
   "language": "زبان",
   "toman": "تومان",
   "buy": "خرید",
-  "specifications": "مشخصات"
+  "specifications": "مشخصات",
+  "cart": "سبد خرید",
+  "cart_empty": "سبد خرید شما خالی است",
+  "checkout": "تکمیل خرید",
+  "total": "جمع کل"
 }

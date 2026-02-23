@@ -6,6 +6,9 @@ const { $t } = useI18n()
 const route = useRoute()
 
 const user = useSupabaseUser()
+
+const { cart, count: cartItemCount } = useCart()
+
 const supabase = useSupabaseClient()
 const displayNameFromServer = ref<string | null>(null)
 if (user.value) {
@@ -57,6 +60,21 @@ const items = computed<NavigationMenuItem[]>(() => [
 
     <template #right>
       <UColorModeButton />
+
+      <UChip
+        :show="cartItemCount > 0"
+        :text="cartItemCount"
+        size="3xl"
+        class="text-3xl"
+      >
+        <UButton
+          color="neutral"
+          variant="ghost"
+          to="/cart"
+          icon="i-lucide-shopping-cart"
+          aria-label="Cart"
+        />
+      </UChip>
 
       <UButton
         color="neutral"

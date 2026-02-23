@@ -81,8 +81,11 @@ const metadataEntries = computed(() => {
 function handleBuy() {
   if (!user.value) {
     navigateTo("/signin")
+    return
   }
-  // TODO: add to cart logic
+
+  const cart = useCart()
+  cart.addItem(book.value!.id, 1)
 }
 </script>
 
