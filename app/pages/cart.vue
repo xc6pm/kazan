@@ -68,7 +68,12 @@ const total = computed(() =>
     </div>
 
     <div v-else class="flex flex-col gap-4">
-      <UCard v-for="item in cartItems" :key="item!.bookId" class="flex">
+      <UCard
+        v-for="item in cartItems"
+        :key="item!.bookId"
+        class="flex"
+        :ui="{ body: 'w-full' }"
+      >
         <div class="flex items-center gap-4">
           <img
             :src="item!.imageUrl"
@@ -88,13 +93,13 @@ const total = computed(() =>
             </p>
           </div>
 
-          <div class="flex items-center gap-2 shrink-0">
+          <div class="flex items-center gap-2 shrink-0 text-left">
             <UButton
               color="neutral"
               variant="outline"
               size="xs"
-              icon="i-lucide-minus"
-              @click="removeItem(item!.bookId, 1)"
+              icon="i-lucide-plus"
+              @click="addItem(item!.bookId, 1)"
             />
             <span class="w-8 text-center font-medium tabular-nums">
               {{ item!.quantity }}
@@ -103,8 +108,8 @@ const total = computed(() =>
               color="neutral"
               variant="outline"
               size="xs"
-              icon="i-lucide-plus"
-              @click="addItem(item!.bookId, 1)"
+              icon="i-lucide-minus"
+              @click="removeItem(item!.bookId, 1)"
             />
           </div>
         </div>
@@ -117,7 +122,7 @@ const total = computed(() =>
           {{ $t("total") }}: {{ formatPrice(total) }} {{ $t("toman") }}
         </span>
         <UButton
-          to="/checkout"
+          to="/fillAddress"
           color="primary"
           size="lg"
           :label="$t('checkout')?.toString()"
