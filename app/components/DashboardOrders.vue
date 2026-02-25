@@ -173,9 +173,9 @@ onMounted(async () => {
 
             <!-- Order totals -->
             <div
-              class="border-t pt-3 flex items-center justify-between text-sm"
+              class="border-t pt-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-sm"
             >
-              <div class="space-x-2 rtl:space-x-reverse flex gap-4">
+              <div class="flex flex-wrap gap-x-4 gap-y-1">
                 <span
                   >{{ $t("subtotal") }}:
                   {{ formatPrice(order.subtotal_amount) }}

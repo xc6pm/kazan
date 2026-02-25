@@ -2,6 +2,11 @@
 import type { Tables } from "~~/shared/types/database.types"
 
 const { $t } = useI18n()
+
+useHead({
+  title: $t("page_title_payment")?.toString(),
+})
+
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
 const { cart } = useCart()

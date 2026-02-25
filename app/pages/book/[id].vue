@@ -34,6 +34,10 @@ if (error.value || !book.value) {
   })
 }
 
+useHead({
+  title: book.value?.title,
+})
+
 const imageUrls = computed(() => {
   const images = book.value?.book_images ?? []
   const sorted = [...images].sort((a, b) => a.position - b.position)

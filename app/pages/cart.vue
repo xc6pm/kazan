@@ -3,6 +3,10 @@ import type { Tables } from "~~/shared/types/database.types"
 
 const { $t } = useI18n()
 
+useHead({
+  title: $t("page_title_cart")?.toString(),
+})
+
 const supabase = useSupabaseClient()
 const { cart, addItem, removeItem } = useCart()
 
@@ -74,7 +78,7 @@ const total = computed(() =>
         class="flex"
         :ui="{ body: 'w-full' }"
       >
-        <div class="flex items-center gap-4">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <img
             :src="item!.imageUrl"
             :alt="item!.title"
@@ -117,7 +121,7 @@ const total = computed(() =>
 
       <USeparator />
 
-      <div class="flex items-center justify-between">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <span class="text-lg font-semibold">
           {{ $t("total") }}: {{ formatPrice(total) }} {{ $t("toman") }}
         </span>
@@ -125,6 +129,8 @@ const total = computed(() =>
           to="/fillAddress"
           color="primary"
           size="lg"
+          block
+          class="sm:w-auto"
           :label="$t('checkout')?.toString()"
           icon="i-lucide-arrow-left"
         />

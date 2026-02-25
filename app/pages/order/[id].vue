@@ -2,6 +2,7 @@
 import type { Tables } from "~~/shared/types/database.types"
 
 const { $t } = useI18n()
+
 const route = useRoute()
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
@@ -44,6 +45,14 @@ type OrderDetail = Tables<"orders"> & {
 }
 
 const order = ref<OrderDetail | null>(null)
+
+useHead({
+  title: computed(() =>
+    order.value
+      ? `${$t("order")?.toString()} #${order.value.id}`
+      : $t("page_title_order_detail")?.toString(),
+  ),
+})
 
 async function fetchOrder() {
   loading.value = true
@@ -199,31 +208,34 @@ await fetchOrder()
         </template>
 
         <div class="flex flex-col gap-2 text-sm">
-          <div class="flex gap-2">
+          <div class="flex flex-wrap gap-x-2 gap-y-1">
             <span class="text-muted">{{ $t("recipient_name") }}:</span>
             <span>{{ order.order_shipments.recipient_name }}</span>
           </div>
-          <div class="flex gap-2">
+          <div class="flex flex-wrap gap-x-2 gap-y-1">
             <span class="text-muted">{{ $t("phone_number") }}:</span>
             <span dir="ltr">{{ order.order_shipments.phone_number }}</span>
           </div>
-          <div class="flex gap-2">
+          <div class="flex flex-wrap gap-x-2 gap-y-1">
             <span class="text-muted">{{ $t("city") }}:</span>
             <span>{{ order.order_shipments.city }}</span>
           </div>
-          <div class="flex gap-2">
+          <div class="flex flex-wrap gap-x-2 gap-y-1">
             <span class="text-muted">{{ $t("address") }}:</span>
             <span>{{ order.order_shipments.address }}</span>
           </div>
-          <div v-if="order.order_shipments.postal_code" class="flex gap-2">
+          <div v-if="order.order_shipments.postal_code" class="flex flex-wrap gap-x-2 gap-y-1">
             <span class="text-muted">{{ $t("postal_code") }}:</span>
             <span dir="ltr">{{ order.order_shipments.postal_code }}</span>
           </div>
-          <div v-if="order.order_shipments.delivery_types" class="flex gap-2">
+          <div
+            v-if="order.order_shipments.delivery_types"
+            class="flex flex-wrap gap-x-2 gap-y-1"
+          >
             <span class="text-muted">{{ $t("delivery_type") }}:</span>
             <span>{{ order.order_shipments.delivery_types.name }}</span>
           </div>
-          <div v-if="order.order_shipments.tracking_number" class="flex gap-2">
+          <div v-if="order.order_shipments.tracking_number" class="flex flex-wrap gap-x-2 gap-y-1">
             <span class="text-muted">{{ $t("tracking_number") }}:</span>
             <span dir="ltr">{{ order.order_shipments.tracking_number }}</span>
           </div>

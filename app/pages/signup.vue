@@ -8,6 +8,10 @@ definePageMeta({
 
 const { $t } = useI18n()
 
+useHead({
+  title: $t("page_title_signup")?.toString(),
+})
+
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
 const router = useRouter()
@@ -78,7 +82,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 </script>
 
 <template>
-  <div class="flex min-h-screen items-center justify-center">
+  <div class="flex md:mt-12 items-center justify-center">
     <UCard class="w-full max-w-md">
       <template #header>
         <h1 class="text-2xl font-bold text-center">{{ $t("sign_up") }}</h1>

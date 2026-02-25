@@ -8,6 +8,10 @@ definePageMeta({
 
 const { $t } = useI18n()
 
+useHead({
+  title: $t("page_title_verify_phone")?.toString(),
+})
+
 const route = useRoute()
 const phone = computed(() => (route.query.phone as string) ?? "")
 

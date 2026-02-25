@@ -91,5 +91,14 @@
   "payment_info": "اطلاعات پرداخت",
   "payment_reference": "شماره پیگیری پرداخت",
   "tracking_number": "کد رهگیری مرسوله",
-  "back_to_dashboard": "بازگشت به داشبورد"
+  "back_to_dashboard": "بازگشت به داشبورد",
+  "page_title_home": "فروشگاه کتاب کازان",
+  "page_title_signin": "ورود",
+  "page_title_signup": "ثبت نام",
+  "page_title_verify_phone": "تأیید شماره همراه",
+  "page_title_cart": "سبد خرید",
+  "page_title_shipping": "اطلاعات ارسال",
+  "page_title_payment": "پرداخت",
+  "page_title_dashboard": "داشبورد",
+  "page_title_order_detail": "جزئیات سفارش"
 }

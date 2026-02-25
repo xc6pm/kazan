@@ -8,6 +8,10 @@ definePageMeta({
 
 const { $t } = useI18n()
 
+useHead({
+  title: $t("page_title_signin")?.toString(),
+})
+
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
 const router = useRouter()

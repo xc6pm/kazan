@@ -1,6 +1,10 @@
 <script setup lang="ts">
 const { $t } = useI18n()
 
+useHead({
+  title: $t("page_title_dashboard")?.toString(),
+})
+
 const tabs = computed(() => [
   {
     label: $t("profile")?.toString() ?? "Profile",

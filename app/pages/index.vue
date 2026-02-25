@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import type { Database } from "~~/shared/types/database.types"
 
+const { $t } = useI18n()
+
+useHead({
+  title: $t("page_title_home")?.toString(),
+})
+
 const route = useRoute()
 const router = useRouter()
 const supabase = useSupabaseClient<Database>()
@@ -41,7 +47,7 @@ const totalBooks = computed(() => result.value?.count ?? 0)
 <template>
   <div class="flex flex-col gap-6 py-6">
     <div
-      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
     >
       <BookCard v-for="book in books" :key="book.id" :book="book" />
     </div>
