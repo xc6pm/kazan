@@ -80,5 +80,16 @@
   "province_placeholder": "استان را انتخاب کنید",
   "province_required": "انتخاب استان الزامی است",
   "city_required": "شهر الزامی است",
-  "address_required": "آدرس الزامی است"
+  "address_required": "آدرس الزامی است",
+  "orders": "سفارش‌ها",
+  "profile": "پروفایل",
+  "order": "سفارش",
+  "filter_by_status": "فیلتر بر اساس وضعیت",
+  "all": "همه",
+  "no_orders": "سفارشی یافت نشد",
+  "order_status": "وضعیت سفارش",
+  "payment_info": "اطلاعات پرداخت",
+  "payment_reference": "شماره پیگیری پرداخت",
+  "tracking_number": "کد رهگیری مرسوله",
+  "back_to_dashboard": "بازگشت به داشبورد"
 }
